@@ -23,22 +23,27 @@ public class PlayingCard implements Comparable<PlayingCard>{
     public String toString() {    return rank + " of " + suit;    }
     @Override
     public int compareTo(PlayingCard other){
-        // return this.rank - other.getRank()
+        if(this.suit.name() == other.getSuit().name()){
+            return this.rank.getRankNumber() - other.getRank().getRankNumber();
+        }
+        else{
+            return this.suit.compareTo(other.getSuit());
+        }
     }
 
     public static void main(String[] args) {
         
-        // java.util.List<PlayingCard> cards = new java.util.LinkedList<>();
-        // cards.add(new PlayingCard(Suit.HEARTS, Rank.FIVE));
-        // cards.add(new PlayingCard(Suit.SPADES, Rank.TEN));
-        // cards.add(new PlayingCard(Suit.CLUBS, Rank.QUEEN));
+        java.util.List<PlayingCard> cards = new java.util.LinkedList<>();
+        cards.add(new PlayingCard(Suit.HEARTS, Rank.FIVE));
+        cards.add(new PlayingCard(Suit.SPADES, Rank.TEN));
+        cards.add(new PlayingCard(Suit.CLUBS, Rank.QUEEN));
         
-        // cards.add(new PlayingCard(Suit.DIAMONDS, Rank.TWO));
-        // cards.add(new PlayingCard(Suit.HEARTS, Rank.ACE));
-        // cards.add(new PlayingCard(Suit.SPADES, Rank.FOUR));
-        // cards.add(new PlayingCard(Suit.CLUBS, Rank.KING));
+        cards.add(new PlayingCard(Suit.DIAMONDS, Rank.TWO));
+        cards.add(new PlayingCard(Suit.HEARTS, Rank.ACE));
+        cards.add(new PlayingCard(Suit.SPADES, Rank.FOUR));
+        cards.add(new PlayingCard(Suit.CLUBS, Rank.KING));
 
-        // java.util.Collections.sort(cards);
-        // System.out.println(cards);
+        java.util.Collections.sort(cards);
+        System.out.println(cards);
     }
 }
