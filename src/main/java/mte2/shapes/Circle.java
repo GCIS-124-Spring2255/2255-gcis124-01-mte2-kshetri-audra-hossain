@@ -3,15 +3,19 @@
 // File name: Circle.java
 
 package mte2.shapes;
-
-public class Circle {
-// public class Circle implements Shape {
-    
-    // private final double radius;
-    // public Circle(double radius) {    this.radius = radius;    }
-
-    // @Override
-    // @Override
+import java.util.*;
+// public class Circle {
+public class Circle implements Shape {
+    private final double radius;
+    public Circle(double radius) {this.radius = radius;}
+    @Override
+    public double perimeter(){
+        return Math.PI*2*radius;
+    }
+    @Override
+    public double area(){
+        return Math.pow(Math.PI*radius,2);
+    }
 
     public static void main(String[] args) {
         
