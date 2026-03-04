@@ -14,28 +14,30 @@ public class MyDeque<E> implements Deque<E> {
     public MyDeque() {    list = new LinkedList<>();    }
 
     @Override
-    public void enqueueFront(){
-        //
+    public void enqueueFront(E element){
+        list.add(0,element);
     }
     @Override
-    public void enqueueBack(){
-    // ... for enqueueBack ...
+    public void enqueueBack(E element){
+        list.add(list.size()-1, element);
     }
     @Override 
     public E dequeueFront(){
-    // ... for dequeueFront ...
+        E returnedelement = list.removeFirst();
+        return returnedelement;
     }
     @Override
     public E dequeueBack(){
-    // ... for dequeueBack ...
+        E returnedelement = list.removeLast();
+        return returnedelement;
     }
     @Override
     public int size(){
-    // ... for size ...
+        return list.size();
     }
     @Override
     public Iterator<E> iterator(){
-    // ... for iterator ...
+    return list.iterator();
     }
 
     public static void main(String[] args) { 
