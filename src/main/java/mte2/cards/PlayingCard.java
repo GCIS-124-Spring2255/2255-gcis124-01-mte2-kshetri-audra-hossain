@@ -3,8 +3,8 @@
 // File name: PlayingCard.java
 
 package mte2.cards;
-
-public class PlayingCard /* implements ... */ {
+import java.util.Collections;
+public class PlayingCard implements Comparable<PlayingCard>{
     
     private final Suit suit;  // The suit of this card.
     private final Rank rank;  // The rank of this card.
@@ -21,10 +21,10 @@ public class PlayingCard /* implements ... */ {
     
     @Override
     public String toString() {    return rank + " of " + suit;    }
-
-    // compareTo() method
-    // ... 
-    // ...
+    @Override
+    public int compareTo(PlayingCard other){
+        // return this.rank - other.getRank()
+    }
 
     public static void main(String[] args) {
         

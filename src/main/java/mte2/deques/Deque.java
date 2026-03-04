@@ -3,7 +3,7 @@
 // File name: Deque.java
 
 package mte2.deques;
-
+import java.util.*;
 // public class Deque {
 public interface Deque<E> extends Iterable<E> {
     
@@ -11,6 +11,7 @@ public interface Deque<E> extends Iterable<E> {
     public void enqueueBack(E element);
     public E dequeueFront();
     public E dequeueBack();
-    public int size();    
+    public int size();
+    public Iterator<E> iterator() throws UnsupportedOperationException; //change to default later
 
 }
